@@ -1,0 +1,89 @@
+<!doctype html>
+<html lang="sv">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Imposter – mobilspel</title>
+  <link rel="stylesheet" href="style.css" />
+  <link rel="manifest" href="manifest.json" />
+</head>
+<body>
+  <main class="app">
+    <section id="setupScreen" class="screen active">
+      <div class="brand">
+        <p class="eyebrow">Mobilspel</p>
+        <h1>Imposter</h1>
+        <p class="intro">Ett ord visas för alla utom en. Impostern måste bluffa sig igenom rundan.</p>
+      </div>
+
+      <div class="card">
+        <label for="players">Spelare</label>
+        <textarea id="players" rows="5" placeholder="Skriv ett namn per rad, t.ex.&#10;Rikard&#10;Johanna&#10;Oliver&#10;Fabian"></textarea>
+        <small>Minst 3 spelare.</small>
+      </div>
+
+      <div class="card">
+        <label for="category">Kategori</label>
+        <select id="category">
+          <option value="mixed">Blandat</option>
+          <option value="food">Mat</option>
+          <option value="places">Platser</option>
+          <option value="sports">Sport</option>
+          <option value="objects">Saker</option>
+        </select>
+      </div>
+
+      <div class="card">
+        <label for="customWord">Eget ord, valfritt</label>
+        <input id="customWord" placeholder="Lämna tomt för slumpat ord" />
+      </div>
+
+      <button id="startGame" class="primary">Starta runda</button>
+    </section>
+
+    <section id="passScreen" class="screen">
+      <p class="eyebrow">Skicka mobilen</p>
+      <h2 id="passTitle">Ge mobilen till nästa spelare</h2>
+      <p class="intro">Tryck när rätt person håller i mobilen. Ingen annan får titta.</p>
+      <button id="showRole" class="primary">Visa min roll</button>
+    </section>
+
+    <section id="roleScreen" class="screen">
+      <p class="eyebrow">Hemligt</p>
+      <h2 id="playerName"></h2>
+      <div id="roleCard" class="role-card">
+        <p id="roleLabel"></p>
+        <strong id="secretWord"></strong>
+      </div>
+      <p id="roleHelp" class="intro"></p>
+      <button id="hideRole" class="primary">Dölj och skicka vidare</button>
+    </section>
+
+    <section id="playScreen" class="screen">
+      <p class="eyebrow">Rundan är igång</p>
+      <h2>Beskriv ordet</h2>
+      <p class="intro">Alla säger en ledtråd i turordning. Impostern försöker smälta in utan att avslöja sig.</p>
+      <div class="card rules">
+        <h3>Förslag på regler</h3>
+        <ul>
+          <li>Varje spelare säger en kort ledtråd.</li>
+          <li>Efter 1–2 varv röstar ni på vem som är impostor.</li>
+          <li>Om impostern blir avslöjad får hen en chans att gissa ordet.</li>
+        </ul>
+      </div>
+      <button id="revealResult" class="primary">Avslöja impostor</button>
+    </section>
+
+    <section id="resultScreen" class="screen">
+      <p class="eyebrow">Resultat</p>
+      <h2>Impostern var</h2>
+      <div class="result-name" id="imposterName"></div>
+      <p class="intro">Ordet var: <strong id="finalWord"></strong></p>
+      <button id="newRound" class="primary">Ny runda</button>
+      <button id="backToSetup" class="secondary">Ändra spelare</button>
+    </section>
+  </main>
+
+  <script src="app.js"></script>
+</body>
+</html>

@@ -1,0 +1,9 @@
+{
+  "name": "Imposter",
+  "short_name": "Imposter",
+  "start_url": "./index.html",
+  "display": "standalone",
+  "background_color": "#0f172a",
+  "theme_color": "#f97316",
+  "description": "Ett enkelt mobilspel där en spelare är impostor."
+}
